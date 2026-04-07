@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Fake News Detector
+    link(rel="stylesheet", href="/style.css")
+  body
+    .container
+      //- Check for the query parameter sent from the redirect
+      if feedback === 'received'
+        .alert-success
+          p ✅ Thank you for your feedback! The model is learning.
+
+      h1 🛡️ Fake News Detector
+      p Paste an article below to analyze its mathematical probability...
+      
+      form(action="/analyze", method="POST")
+        textarea(name="newsText", placeholder="Paste news content here...", rows="12", required)
+        br
+        button(type="submit") Run NLP Analysis

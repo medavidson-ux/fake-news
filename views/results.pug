@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Analysis Result
+    link(rel="stylesheet", href="/style.css")
+  body
+    .container
+      h1 Analysis Complete
+      
+      //- Conditional class based on the prediction string
+      div(class=`result-card ${prediction.toLowerCase()}`)
+        h2 Result: This article is likely #{prediction}
+        
+        .feedback-section
+          p Was this analysis correct?
+          form(action="/feedback", method="POST" style="display: inline;")
+            input(type="hidden" name="content" value=content)
+            input(type="hidden" name="label" value=prediction)
+            button(type="submit" name="isCorrect" value="true" class="btn-check") ✅ Yes
+            button(type="submit" name="isCorrect" value="false" class="btn-check") ❌ No
+      
+      h3 Content Analyzed:
+      p #{content.substring(0, 500)}...
+      
+      .meta-info
+        p Prediction generated using Passive Aggressive Classifier and TF-IDF Vectorization.
+      
+      hr
+      a(href="/") 
+        button(type="button", style="background: #95a5a6") Analyze Another Article
