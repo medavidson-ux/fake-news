@@ -1,0 +1,40 @@
+# --- Environments ---
+# Python virtual environment
+venv/
+ENV/
+.env
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+
+# --- Data & Machine Learning ---
+# Large CSV datasets (True.csv, Fake.csv, combined_news.csv)
+*.csv
+
+# Trained models and vectorizers
+# (Keep these ignored so you can train them locally; 
+# otherwise, they can be too large for standard Git)
+*.pkl
+
+# NLTK data downloads
+nltk_data/
+
+# --- Operating System ---
+# Windows thumbnail cache and folder settings
+Thumbs.db
+desktop.ini
+# Synology NAS metadata (since you use Synology Drive)
+.DS_Store
+@eaDir/
+
+# --- IDEs ---
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# --- Build Tools ---
+# If you use Parcel or other bundlers
+dist/
+.cache/
+.parcel-cache
